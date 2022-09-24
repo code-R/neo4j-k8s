@@ -1,0 +1,16 @@
+neo4j:
+  name: "neo4j"
+  resources:
+    cpu: "0.5"
+    memory: "2Gi"
+  password: "my-password"
+  acceptLicenseAgreement: "yes"
+
+volumes:
+  data:
+    mode: "volume"
+    volume:
+      setOwnerAndGroupWritableFilePermissions: true
+      gcePersistentDisk:
+        # The name of the gcePersistentDisk volume you have created for this cluster member.
+        pdName: "core-disk-3"
